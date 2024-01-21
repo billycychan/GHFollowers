@@ -16,10 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        configureTabBar()
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = createTabbar()
         window?.makeKeyAndVisible()
+        
+        configureNavigationBar()
         
     }
     
@@ -44,24 +48,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().tintColor = .systemGreen
         tabbar.viewControllers = [createSearchNavigationController(),
                                   createFavoritesNavigationController()]
-            
-        setOapaqueBackground()
-        
         return tabbar
         
     }
     
-    func setOapaqueBackground() {
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
+    }
+    
+    func configureTabBar() {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithDefaultBackground()
         tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemChromeMaterial)
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        
-        // correct the transparency bug for Navigation bars
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.configureWithDefaultBackground()
-        navigationBarAppearance.backgroundEffect = UIBlurEffect(style: .systemChromeMaterial)
-        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
