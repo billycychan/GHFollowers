@@ -23,7 +23,7 @@
 		478B5A7A2B6041CE00AFDF61 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A792B6041CE00AFDF61 /* Follower.swift */; };
 		478B5A7C2B60438E00AFDF61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A7B2B60438E00AFDF61 /* User.swift */; };
 		478B5A812B60471300AFDF61 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A802B60471300AFDF61 /* NetworkManager.swift */; };
-		478B5A842B604FFC00AFDF61 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A832B604FFC00AFDF61 /* ErrorMessage.swift */; };
+		478B5A842B604FFC00AFDF61 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A832B604FFC00AFDF61 /* GFError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		478B5A792B6041CE00AFDF61 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		478B5A7B2B60438E00AFDF61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		478B5A802B60471300AFDF61 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		478B5A832B604FFC00AFDF61 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		478B5A832B604FFC00AFDF61 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 		478B5A822B604FE400AFDF61 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				478B5A832B604FFC00AFDF61 /* ErrorMessage.swift */,
+				478B5A832B604FFC00AFDF61 /* GFError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				478B5A732B5F840200AFDF61 /* UIViewController+Ext.swift in Sources */,
 				474CC1D92B5C88C5004DFB92 /* GFButton.swift in Sources */,
 				478B5A712B5F7D4E00AFDF61 /* GFAlertVC.swift in Sources */,
-				478B5A842B604FFC00AFDF61 /* ErrorMessage.swift in Sources */,
+				478B5A842B604FFC00AFDF61 /* GFError.swift in Sources */,
 				478B5A6F2B5F7CAC00AFDF61 /* GFBodyLabel.swift in Sources */,
 				478B5A7A2B6041CE00AFDF61 /* Follower.swift in Sources */,
 				478B5A6D2B5F7A1800AFDF61 /* GFTitleLabel.swift in Sources */,
