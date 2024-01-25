@@ -115,6 +115,7 @@
 				478B5A702B5F7D4E00AFDF61 /* GFAlertVC.swift */,
 				474CC1D82B5C88C5004DFB92 /* GFButton.swift */,
 				474CC1DA2B5C8D66004DFB92 /* GFTextField.swift */,
+				478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -168,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */,
-				478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
