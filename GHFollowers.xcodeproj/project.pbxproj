@@ -26,6 +26,7 @@
 		478B5A842B604FFC00AFDF61 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5A832B604FFC00AFDF61 /* GFError.swift */; };
 		478B5AB22B6200AA00AFDF61 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */; };
 		478B5AB42B62025700AFDF61 /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */; };
+		478B5AB62B6305C600AFDF61 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB52B6305C600AFDF61 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		478B5A832B604FFC00AFDF61 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
+		478B5AB52B6305C600AFDF61 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				478B5A832B604FFC00AFDF61 /* GFError.swift */,
+				478B5AB52B6305C600AFDF61 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				474CC1E02B5DBF6E004DFB92 /* FollowerListVC.swift in Sources */,
 				474CC1D72B5C8101004DFB92 /* FavoritesListVC.swift in Sources */,
 				478B5A732B5F840200AFDF61 /* UIViewController+Ext.swift in Sources */,
+				478B5AB62B6305C600AFDF61 /* UIHelper.swift in Sources */,
 				474CC1D92B5C88C5004DFB92 /* GFButton.swift in Sources */,
 				478B5A712B5F7D4E00AFDF61 /* GFAlertVC.swift in Sources */,
 				478B5AB22B6200AA00AFDF61 /* FollowerCell.swift in Sources */,
