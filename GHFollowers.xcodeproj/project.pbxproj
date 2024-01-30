@@ -27,6 +27,7 @@
 		478B5AB22B6200AA00AFDF61 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */; };
 		478B5AB42B62025700AFDF61 /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */; };
 		478B5AB62B6305C600AFDF61 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AB52B6305C600AFDF61 /* UIHelper.swift */; };
+		478B5ABE2B68DF4000AFDF61 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5ABD2B68DF4000AFDF61 /* GFEmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
 		478B5AB52B6305C600AFDF61 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		478B5ABD2B68DF4000AFDF61 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +111,13 @@
 		478B5A752B5F8B0A00AFDF61 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				478B5ABC2B68DF2000AFDF61 /* Labels */,
+				478B5ABB2B68DF0B00AFDF61 /* ViewControllers */,
+				478B5ABA2B68DF0500AFDF61 /* ImageViews */,
+				478B5AB92B68DEFD00AFDF61 /* TextFields */,
+				478B5AB82B68DEF500AFDF61 /* Buttons */,
+				478B5AB72B68DEEF00AFDF61 /* Views */,
 				478B5AB02B62004F00AFDF61 /* Cells */,
-				478B5A6C2B5F7A1800AFDF61 /* GFTitleLabel.swift */,
-				478B5A6E2B5F7CAC00AFDF61 /* GFBodyLabel.swift */,
-				478B5A702B5F7D4E00AFDF61 /* GFAlertVC.swift */,
-				474CC1D82B5C88C5004DFB92 /* GFButton.swift */,
-				474CC1DA2B5C8D66004DFB92 /* GFTextField.swift */,
-				478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -171,6 +173,55 @@
 				478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		478B5AB72B68DEEF00AFDF61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				478B5ABD2B68DF4000AFDF61 /* GFEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		478B5AB82B68DEF500AFDF61 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				474CC1D82B5C88C5004DFB92 /* GFButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		478B5AB92B68DEFD00AFDF61 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				474CC1DA2B5C8D66004DFB92 /* GFTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		478B5ABA2B68DF0500AFDF61 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				478B5AB32B62025700AFDF61 /* GHAvatarImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		478B5ABB2B68DF0B00AFDF61 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				478B5A702B5F7D4E00AFDF61 /* GFAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		478B5ABC2B68DF2000AFDF61 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				478B5A6C2B5F7A1800AFDF61 /* GFTitleLabel.swift */,
+				478B5A6E2B5F7CAC00AFDF61 /* GFBodyLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +308,7 @@
 				478B5A7A2B6041CE00AFDF61 /* Follower.swift in Sources */,
 				478B5A6D2B5F7A1800AFDF61 /* GFTitleLabel.swift in Sources */,
 				478B5A812B60471300AFDF61 /* NetworkManager.swift in Sources */,
+				478B5ABE2B68DF4000AFDF61 /* GFEmptyStateView.swift in Sources */,
 				478B5AB42B62025700AFDF61 /* GHAvatarImageView.swift in Sources */,
 				474CC1D52B5C80DA004DFB92 /* SearchVC.swift in Sources */,
 				474CC1C12B5C7CDA004DFB92 /* AppDelegate.swift in Sources */,
