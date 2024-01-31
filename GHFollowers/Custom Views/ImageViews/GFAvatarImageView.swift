@@ -1,5 +1,5 @@
 //
-//  GHAvatarImageView.swift
+//  GFAvatarImageView.swift
 //  GHFollowers
 //
 //  Created by CHI YU CHAN on 24/1/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GHAvatarImageView: UIImageView {
+class GFAvatarImageView: UIImageView {
     
     let cache = NetworkManager.shared.cache
     let placeholderImage = UIImage(named: "avatar-placeholder")
