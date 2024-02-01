@@ -33,6 +33,7 @@
 		478B5AC42B699C3E00AFDF61 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AC32B699C3E00AFDF61 /* GFSecondaryTitleLabel.swift */; };
 		478B5AC62B69A09E00AFDF61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AC52B69A09E00AFDF61 /* Constants.swift */; };
 		478B5AC82B6B59AD00AFDF61 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AC72B6B59AD00AFDF61 /* GFItemInfoView.swift */; };
+		478B5ACA2B6B5F1700AFDF61 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B5AC92B6B5F1700AFDF61 /* GFItemInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		478B5AC32B699C3E00AFDF61 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		478B5AC52B69A09E00AFDF61 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		478B5AC72B6B59AD00AFDF61 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		478B5AC92B6B5F1700AFDF61 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			children = (
 				478B5AC12B699BE700AFDF61 /* GFUserInfoHeaderVC.swift */,
 				478B5A702B5F7D4E00AFDF61 /* GFAlertVC.swift */,
+				478B5AC92B6B5F1700AFDF61 /* GFItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				474CC1D72B5C8101004DFB92 /* FavoritesListVC.swift in Sources */,
 				478B5A732B5F840200AFDF61 /* UIViewController+Ext.swift in Sources */,
 				478B5AB62B6305C600AFDF61 /* UIHelper.swift in Sources */,
+				478B5ACA2B6B5F1700AFDF61 /* GFItemInfoVC.swift in Sources */,
 				478B5AC62B69A09E00AFDF61 /* Constants.swift in Sources */,
 				474CC1D92B5C88C5004DFB92 /* GFButton.swift in Sources */,
 				478B5A712B5F7D4E00AFDF61 /* GFAlertVC.swift in Sources */,
