@@ -12,6 +12,7 @@ class UserInfoVC: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
     var username: String!
@@ -39,6 +40,7 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: GFReportItemVC(user: user), to: self.itemViewOne)
                     self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "GithHub since \(user.createdAt.convertToDisplayFormat())"
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(
@@ -54,7 +56,7 @@ class UserInfoVC: UIViewController {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
 
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         for itemView in itemViews {
             view.addSubview(itemView)
             itemView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +77,7 @@ class UserInfoVC: UIViewController {
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
 
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding)
         ])
     }
     
