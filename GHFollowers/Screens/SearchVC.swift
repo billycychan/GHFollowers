@@ -24,6 +24,10 @@ class SearchVC: UIViewController {
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
+        
+        NSLayoutConstraint.activate([
+            view.keyboardLayoutGuide.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor)
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +73,7 @@ class SearchVC: UIViewController {
     func configureTextField() {
         view.addSubview(usernameTextField)
         usernameTextField.delegate = self
+        usernameTextField.spellCheckingType = .no
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
             usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
