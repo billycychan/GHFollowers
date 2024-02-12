@@ -39,6 +39,7 @@
 		47F4922E2B75F5ED00E14FD9 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4922D2B75F5ED00E14FD9 /* Date+Ext.swift */; };
 		47F492302B75F6E700E14FD9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4922F2B75F6E700E14FD9 /* String+Ext.swift */; };
 		47F492322B7AC0C700E14FD9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492312B7AC0C700E14FD9 /* PersistenceManager.swift */; };
+		47F492362B7AC92700E14FD9 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492352B7AC92700E14FD9 /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		47F4922D2B75F5ED00E14FD9 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		47F4922F2B75F6E700E14FD9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		47F492312B7AC0C700E14FD9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		47F492352B7AC92700E14FD9 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				478B5AB12B6200AA00AFDF61 /* FollowerCell.swift */,
+				47F492352B7AC92700E14FD9 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				478B5AB22B6200AA00AFDF61 /* FollowerCell.swift in Sources */,
 				478B5ACE2B6B62C100AFDF61 /* GFFollowerItemVC.swift in Sources */,
 				478B5AC82B6B59AD00AFDF61 /* GFItemInfoView.swift in Sources */,
+				47F492362B7AC92700E14FD9 /* FavoriteCell.swift in Sources */,
 				478B5A842B604FFC00AFDF61 /* GFError.swift in Sources */,
 				478B5A6F2B5F7CAC00AFDF61 /* GFBodyLabel.swift in Sources */,
 				478B5AC22B699BE700AFDF61 /* GFUserInfoHeaderVC.swift in Sources */,
