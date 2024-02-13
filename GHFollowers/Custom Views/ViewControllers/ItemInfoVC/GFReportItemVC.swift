@@ -12,7 +12,6 @@ protocol GFReportItemVCDelegate: AnyObject {
 }
 
 class GFReportItemVC: GFItemInfoVC {
-    
     weak var delegate: GFReportItemVCDelegate?
     
     init(user: User, delegate: GFReportItemVCDelegate) {

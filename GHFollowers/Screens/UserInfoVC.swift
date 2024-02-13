@@ -13,7 +13,6 @@ protocol UserInfoVCDelegate: AnyObject {
 }
 
 class UserInfoVC: GFDataLoadingVC {
-    
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -24,6 +23,7 @@ class UserInfoVC: GFDataLoadingVC {
     var itemViews: [UIView] = []
     
     var username: String!
+    
     weak var delegate: UserInfoVCDelegate?
     
     override func viewDidLoad() {

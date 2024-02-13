@@ -122,11 +122,11 @@
 			children = (
 				478B5A822B604FE400AFDF61 /* Utilities */,
 				474CC1CE2B5C7CDE004DFB92 /* Info.plist */,
+				478B5A7D2B6046EF00AFDF61 /* Managers */,
 				478B5A782B6041C500AFDF61 /* Model */,
 				478B5A762B5F8B2E00AFDF61 /* Extensions */,
 				478B5A752B5F8B0A00AFDF61 /* Custom Views */,
 				478B5A742B5F8ACB00AFDF61 /* Screens */,
-				478B5A7D2B6046EF00AFDF61 /* Managers */,
 				478B5A772B5F8B5C00AFDF61 /* Support */,
 			);
 			path = GHFollowers;
@@ -136,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				474CC1D42B5C80DA004DFB92 /* SearchVC.swift */,
-				474CC1D62B5C8101004DFB92 /* FavoritesListVC.swift */,
 				474CC1DF2B5DBF6E004DFB92 /* FollowerListVC.swift */,
+				474CC1D62B5C8101004DFB92 /* FavoritesListVC.swift */,
 				478B5ABF2B69919F00AFDF61 /* UserInfoVC.swift */,
 			);
 			path = Screens;
@@ -162,10 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				478B5A722B5F840200AFDF61 /* UIViewController+Ext.swift */,
-				47F4922D2B75F5ED00E14FD9 /* Date+Ext.swift */,
-				47F4922F2B75F6E700E14FD9 /* String+Ext.swift */,
 				47F4923E2B7B5E1400E14FD9 /* UIView+Ext.swift */,
 				47F492402B7B690900E14FD9 /* UITableView+Ext.swift */,
+				47F4922D2B75F5ED00E14FD9 /* Date+Ext.swift */,
+				47F4922F2B75F6E700E14FD9 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 		478B5A822B604FE400AFDF61 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				478B5A832B604FFC00AFDF61 /* GFError.swift */,
 				478B5AB52B6305C600AFDF61 /* UIHelper.swift */,
+				478B5A832B604FFC00AFDF61 /* GFError.swift */,
 				478B5AC52B69A09E00AFDF61 /* Constants.swift */,
 			);
 			path = Utilities;
