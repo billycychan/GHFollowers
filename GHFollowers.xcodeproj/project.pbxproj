@@ -41,6 +41,7 @@
 		47F492322B7AC0C700E14FD9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492312B7AC0C700E14FD9 /* PersistenceManager.swift */; };
 		47F492362B7AC92700E14FD9 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492352B7AC92700E14FD9 /* FavoriteCell.swift */; };
 		47F492392B7AD1F000E14FD9 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */; };
+		47F4923B2B7B231900E14FD9 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		47F492312B7AC0C700E14FD9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		47F492352B7AC92700E14FD9 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
+		47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				478B5ABD2B68DF4000AFDF61 /* GFEmptyStateView.swift */,
 				478B5AC72B6B59AD00AFDF61 /* GFItemInfoView.swift */,
+				47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				478B5AC22B699BE700AFDF61 /* GFUserInfoHeaderVC.swift in Sources */,
 				478B5A7A2B6041CE00AFDF61 /* Follower.swift in Sources */,
 				478B5A6D2B5F7A1800AFDF61 /* GFTitleLabel.swift in Sources */,
+				47F4923B2B7B231900E14FD9 /* GFAlertContainerView.swift in Sources */,
 				478B5A812B60471300AFDF61 /* NetworkManager.swift in Sources */,
 				47F4922E2B75F5ED00E14FD9 /* Date+Ext.swift in Sources */,
 				47F492322B7AC0C700E14FD9 /* PersistenceManager.swift in Sources */,
