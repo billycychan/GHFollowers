@@ -42,6 +42,7 @@
 		47F492362B7AC92700E14FD9 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492352B7AC92700E14FD9 /* FavoriteCell.swift */; };
 		47F492392B7AD1F000E14FD9 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */; };
 		47F4923B2B7B231900E14FD9 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */; };
+		47F4923D2B7B2F1D00E14FD9 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923C2B7B2F1C00E14FD9 /* GFDataLoadingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		47F492352B7AC92700E14FD9 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
 		47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
+		47F4923C2B7B2F1C00E14FD9 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				478B5ACF2B6B630000AFDF61 /* ItemInfoVC */,
 				478B5AC12B699BE700AFDF61 /* GFUserInfoHeaderVC.swift */,
 				478B5A702B5F7D4E00AFDF61 /* GFAlertVC.swift */,
+				47F4923C2B7B2F1C00E14FD9 /* GFDataLoadingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				47F492302B75F6E700E14FD9 /* String+Ext.swift in Sources */,
 				474CC1D72B5C8101004DFB92 /* FavoritesListVC.swift in Sources */,
 				478B5A732B5F840200AFDF61 /* UIViewController+Ext.swift in Sources */,
+				47F4923D2B7B2F1D00E14FD9 /* GFDataLoadingVC.swift in Sources */,
 				478B5AB62B6305C600AFDF61 /* UIHelper.swift in Sources */,
 				478B5ACA2B6B5F1700AFDF61 /* GFItemInfoVC.swift in Sources */,
 				478B5AC62B69A09E00AFDF61 /* Constants.swift in Sources */,
