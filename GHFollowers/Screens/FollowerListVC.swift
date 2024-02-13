@@ -80,7 +80,7 @@ class FollowerListVC: GFDataLoadingVC {
     func addUserFavorites(user: User) {
         let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
         PersistenceManager.updateWith(favorite: favorite, actionType: .add) { error in
-            guard let error = error else {
+            guard let error else {
                 DispatchQueue.main.async {
                     self.presentGFAlert(title: "Success!", message: "You have successfully favorited this user.", buttonTitle: "Hooray!")
                 }
