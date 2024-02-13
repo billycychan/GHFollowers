@@ -43,6 +43,7 @@
 		47F492392B7AD1F000E14FD9 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */; };
 		47F4923B2B7B231900E14FD9 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */; };
 		47F4923D2B7B2F1D00E14FD9 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923C2B7B2F1C00E14FD9 /* GFDataLoadingVC.swift */; };
+		47F4923F2B7B5E1400E14FD9 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4923E2B7B5E1400E14FD9 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		47F492382B7AD1F000E14FD9 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
 		47F4923A2B7B231900E14FD9 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 		47F4923C2B7B2F1C00E14FD9 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
+		47F4923E2B7B5E1400E14FD9 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				478B5A722B5F840200AFDF61 /* UIViewController+Ext.swift */,
 				47F4922D2B75F5ED00E14FD9 /* Date+Ext.swift */,
 				47F4922F2B75F6E700E14FD9 /* String+Ext.swift */,
+				47F4923E2B7B5E1400E14FD9 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				474CC1D52B5C80DA004DFB92 /* SearchVC.swift in Sources */,
 				478B5ACC2B6B615800AFDF61 /* GFReportItemVC.swift in Sources */,
 				474CC1C12B5C7CDA004DFB92 /* AppDelegate.swift in Sources */,
+				47F4923F2B7B5E1400E14FD9 /* UIView+Ext.swift in Sources */,
 				474CC1C32B5C7CDA004DFB92 /* SceneDelegate.swift in Sources */,
 				478B5AC02B69919F00AFDF61 /* UserInfoVC.swift in Sources */,
 			);

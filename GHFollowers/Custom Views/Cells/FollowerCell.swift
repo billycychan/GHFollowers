@@ -33,8 +33,7 @@ class FollowerCell: UICollectionViewCell {
     }
     
     func configure() {
-        contentView.addSubview(avatarImageView)
-        contentView.addSubview(usernameLabel)
+        contentView.addSubviews(avatarImageView, usernameLabel)
         
         let padding: CGFloat = 8
         
