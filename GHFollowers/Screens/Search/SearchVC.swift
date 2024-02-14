@@ -16,12 +16,22 @@ class SearchVC: UIViewController {
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(color: .systemGreen, title: "Get Followers", systemImageName: "person.3")
     
-    private var viewModel = SearchViewModel()
+    private var viewModel: SearchViewModel
+    
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubviews(logoImageView, usernameTextField, callToActionButton)
+        
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
@@ -116,5 +126,5 @@ extension SearchVC: UITextFieldDelegate {
 }
 
 #Preview {
-    SearchVC()
+    SearchVC(viewModel: SearchViewModel())
 }

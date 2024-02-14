@@ -18,9 +18,4 @@ class SearchViewModel {
     var isUserNameEntered: Bool {
         return !username.isEmpty
     }
-    
-    func updateUsername(_ username: String) {
-        self.username = username
-    }
-
 }

@@ -16,29 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        configureTabBar()
-        configureNavigationBar()
-
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController()
         
-        appCoordinator = AppCoordinator(navigationController: navigationController)
+        appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
         
-        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-    }
-    
-    func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = .systemGreen
-    }
-    
-    func configureTabBar() {
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.configureWithDefaultBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemChromeMaterial)
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -8,21 +8,37 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
+    let window: UIWindow?
+    
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
-    var navigationController: UINavigationController
     
-    init(navigationController : UINavigationController) {
-        self.navigationController = navigationController
+    var rootViewController = UITabBarController()
+    
+    init(window: UIWindow?) {
+        self.window = window
     }
     
     func start() {
-        goToMainTab()
+        let mainCoordinator = MainCoordinator()
+        mainCoordinator.start()
+        children = [mainCoordinator]
+        window?.rootViewController = mainCoordinator.rootViewController
     }
     
     func goToMainTab() {
-        let tabBarController = GFTabBarController()
-        navigationController.pushViewController(tabBarController, animated: true)
+        let searchCoordinator = SearchCoordinator()
+        searchCoordinator.start()
+        self.children.append(searchCoordinator)
+        
+        let followerListCoordinator = FollowerListCoordinator()
+        followerListCoordinator.start()
+        self.children.append(followerListCoordinator)
+        
+        self.rootViewController.viewControllers = [
+            searchCoordinator.rootViewController,
+            followerListCoordinator.rootViewController
+        ]
     }
 }
 

@@ -15,7 +15,7 @@ class GFTabBarController: UITabBarController {
     }
     
     func createSearchNavigationController() -> UINavigationController {
-        let searchVC = SearchVC()
+        let searchVC = SearchVC(viewModel: SearchViewModel())
         searchVC.title = "Search"
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
