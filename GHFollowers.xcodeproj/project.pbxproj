@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4739CEAB2B7CCC0C00F5E644 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEAA2B7CCC0C00F5E644 /* Coordinator.swift */; };
 		4739CEAD2B7CCC2900F5E644 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEAC2B7CCC2900F5E644 /* AppCoordinator.swift */; };
+		4739CEB12B7CCF3E00F5E644 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEB02B7CCF3E00F5E644 /* SearchViewModel.swift */; };
+		4739CEB52B7D6E3B00F5E644 /* Publishers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEB42B7D6E3B00F5E644 /* Publishers+Ext.swift */; };
 		474CC1C12B5C7CDA004DFB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474CC1C02B5C7CDA004DFB92 /* AppDelegate.swift */; };
 		474CC1C32B5C7CDA004DFB92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474CC1C22B5C7CDA004DFB92 /* SceneDelegate.swift */; };
 		474CC1CA2B5C7CDE004DFB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474CC1C92B5C7CDE004DFB92 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		4739CEAA2B7CCC0C00F5E644 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4739CEAC2B7CCC2900F5E644 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4739CEB02B7CCF3E00F5E644 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		4739CEB42B7D6E3B00F5E644 /* Publishers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Ext.swift"; sourceTree = "<group>"; };
 		474CC1BD2B5C7CDA004DFB92 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474CC1C02B5C7CDA004DFB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		474CC1C22B5C7CDA004DFB92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		4739CEAF2B7CCF2400F5E644 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				474CC1D42B5C80DA004DFB92 /* SearchVC.swift */,
+				4739CEB02B7CCF3E00F5E644 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		474CC1B42B5C7CDA004DFB92 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +166,7 @@
 		478B5A742B5F8ACB00AFDF61 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				474CC1D42B5C80DA004DFB92 /* SearchVC.swift */,
+				4739CEAF2B7CCF2400F5E644 /* Search */,
 				474CC1DF2B5DBF6E004DFB92 /* FollowerListVC.swift */,
 				474CC1D62B5C8101004DFB92 /* FavoritesListVC.swift */,
 				478B5ABF2B69919F00AFDF61 /* UserInfoVC.swift */,
@@ -179,6 +192,7 @@
 		478B5A762B5F8B2E00AFDF61 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4739CEB42B7D6E3B00F5E644 /* Publishers+Ext.swift */,
 				478B5A722B5F840200AFDF61 /* UIViewController+Ext.swift */,
 				47F4923E2B7B5E1400E14FD9 /* UIView+Ext.swift */,
 				47F492402B7B690900E14FD9 /* UITableView+Ext.swift */,
@@ -412,6 +426,7 @@
 				478B5A7A2B6041CE00AFDF61 /* Follower.swift in Sources */,
 				47F492412B7B690900E14FD9 /* UITableView+Ext.swift in Sources */,
 				478B5A6D2B5F7A1800AFDF61 /* GFTitleLabel.swift in Sources */,
+				4739CEB12B7CCF3E00F5E644 /* SearchViewModel.swift in Sources */,
 				47F4923B2B7B231900E14FD9 /* GFAlertContainerView.swift in Sources */,
 				478B5A812B60471300AFDF61 /* NetworkManager.swift in Sources */,
 				47F4922E2B75F5ED00E14FD9 /* Date+Ext.swift in Sources */,
@@ -424,6 +439,7 @@
 				474CC1C12B5C7CDA004DFB92 /* AppDelegate.swift in Sources */,
 				47F4923F2B7B5E1400E14FD9 /* UIView+Ext.swift in Sources */,
 				474CC1C32B5C7CDA004DFB92 /* SceneDelegate.swift in Sources */,
+				4739CEB52B7D6E3B00F5E644 /* Publishers+Ext.swift in Sources */,
 				478B5AC02B69919F00AFDF61 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

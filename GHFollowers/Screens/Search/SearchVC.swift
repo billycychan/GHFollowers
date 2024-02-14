@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import Combine
 
 class SearchVC: UIViewController {
-
+    
+    private var cancellables = Set<AnyCancellable>()
+    
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(color: .systemGreen, title: "Get Followers", systemImageName: "person.3")
     
-    var isUserNameEntered: Bool {
-        return !usernameTextField.text!.isEmpty
-    }
+    private var viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class SearchVC: UIViewController {
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
+        
+        setupBindings()
         
         NSLayoutConstraint.activate([
             view.keyboardLayoutGuide.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor)
@@ -37,13 +40,23 @@ class SearchVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    private func setupBindings() {
+        usernameTextField.text = viewModel.username
+
+        cancellables = [
+            usernameTextField.textPublisher().sink { [weak self] text in self?.viewModel.username = text },
+            viewModel.$username.sink { [weak self] username in self?.usernameTextField.text = username }
+        ]
+
+    }
+    
     func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
     @objc func pushFollowerListVC() {
-        guard isUserNameEntered else {
+        guard viewModel.isUserNameEntered else {
             presentGFAlert(
                 title: "Empty Username",
                 message: "Please enter a username. We need to know who to look for😀",
