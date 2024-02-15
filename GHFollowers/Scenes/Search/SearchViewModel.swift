@@ -8,14 +8,7 @@
 import Foundation
 
 class SearchViewModel {
-    
     @Published var username = ""
     
-    init() {
-        
-    }
-    
-    var isUserNameEntered: Bool {
-        return !username.isEmpty
-    }
+    init() {}
 }

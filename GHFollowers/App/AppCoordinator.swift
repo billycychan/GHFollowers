@@ -25,20 +25,5 @@ class AppCoordinator: Coordinator {
         children = [mainCoordinator]
         window?.rootViewController = mainCoordinator.rootViewController
     }
-    
-    func goToMainTab() {
-        let searchCoordinator = SearchCoordinator()
-        searchCoordinator.start()
-        self.children.append(searchCoordinator)
-        
-        let followerListCoordinator = FollowerListCoordinator()
-        followerListCoordinator.start()
-        self.children.append(followerListCoordinator)
-        
-        self.rootViewController.viewControllers = [
-            searchCoordinator.rootViewController,
-            followerListCoordinator.rootViewController
-        ]
-    }
 }
 
