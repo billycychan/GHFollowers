@@ -11,8 +11,6 @@ import Combine
 class SearchVC: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     
-    weak var coordinator: SearchCoordinator?
-    
     lazy private var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Images.ghLogo
@@ -30,7 +28,8 @@ class SearchVC: UIViewController {
             systemImageName: "person.3"
         )
     }()
-    
+
+    weak var coordinator: SearchCoordinator?
     private var viewModel: SearchViewModel
     
     init(viewModel: SearchViewModel) {
