@@ -15,13 +15,24 @@ class FavoriteListCoordinator: Coordinator {
     var rootViewController = UINavigationController()
     
     lazy var viewController: UIViewController = {
-        let favoriteListVC = FavoritesListVC()
+        let viewModel = FavoriteListViewModel()
+        let favoriteListVC = FavoritesListVC(viewModel: viewModel)
         favoriteListVC.title = "Favorite"
         favoriteListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        favoriteListVC.coordinator = self
         return favoriteListVC
     }()
     
     func start() {
         rootViewController.setViewControllers([viewController], animated: false)
+    }
+    
+    func routeToFollowerListVC(username: String) {
+        let followerListCoordinator = FollowerListCoordinator(username: username, navigationController: rootViewController)
+        followerListCoordinator.parentCoordinator = self
+        children.append(followerListCoordinator)
+        
+        let followerListVC = followerListCoordinator.viewController
+        rootViewController.pushViewController(followerListVC, animated: true)
     }
 }
