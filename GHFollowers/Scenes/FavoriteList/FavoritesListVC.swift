@@ -41,14 +41,7 @@ class FavoritesListVC: GFDataLoadingVC {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         view.addSubview(tableView)
-        
-        cancellables =  [
-            viewModel.$favorites
-                .receive(on: DispatchQueue.main)
-                .sink(receiveValue: { [weak self]  in
-                    self?.updateUI(with: $0)
-                })
-        ]
+        setupBindings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +59,16 @@ class FavoritesListVC: GFDataLoadingVC {
         } else {
             contentUnavailableConfiguration = nil
         }
+    }
+    
+    private func setupBindings() {
+        cancellables =  [
+            viewModel.$favorites
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { [weak self]  in
+                    self?.updateUI(with: $0)
+                })
+        ]
     }
     
     func getFavorites() {

@@ -42,10 +42,17 @@ class UserInfoVC: GFDataLoadingVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
+        
         configureViewController()
         configureScrollView()
         layoutUI()
         
+        getUserInfo()
+        
+    }
+    
+    func setupBindings() {
         cancellables = [
             viewModel.$user
                 .receive(on: DispatchQueue.main)
@@ -54,9 +61,6 @@ class UserInfoVC: GFDataLoadingVC {
                     self.configureUIElements(with: user)
                 })
         ]
-        
-        getUserInfo()
-
     }
     
     func configureViewController() {
@@ -101,7 +105,7 @@ class UserInfoVC: GFDataLoadingVC {
     func layoutUI() {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
-
+        
         itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         for itemView in itemViews {
             contentView.addSubview(itemView)
@@ -122,7 +126,7 @@ class UserInfoVC: GFDataLoadingVC {
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
-
+            
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
             dateLabel.heightAnchor.constraint(equalToConstant: 50)
         ])

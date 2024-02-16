@@ -16,9 +16,9 @@ class SearchVC: UIViewController {
         imageView.image = Images.ghLogo
         return imageView
     }()
-
+    
     lazy private var usernameTextField: GFTextField = {
-       let textField = GFTextField()
+        let textField = GFTextField()
         textField.delegate = self
         textField.spellCheckingType = .no
         return textField
@@ -33,7 +33,7 @@ class SearchVC: UIViewController {
         button.addTarget(self, action: #selector(didTapCallToActionButton), for: .touchUpInside)
         return button
     }()
-
+    
     weak var coordinator: SearchCoordinator?
     private var viewModel: SearchViewModel
     
@@ -51,12 +51,13 @@ class SearchVC: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubviews(logoImageView, usernameTextField, callToActionButton)
         
+        setupBindings()
+        
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
         
-        setupBindings()
         
         NSLayoutConstraint.activate([
             view.keyboardLayoutGuide.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor)
@@ -99,7 +100,7 @@ class SearchVC: UIViewController {
     
     private func configureLogoImageView() {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

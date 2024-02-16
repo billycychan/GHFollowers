@@ -20,7 +20,7 @@ class FollowerListVC: GFDataLoadingVC {
     
     weak var coordinator: FollowerListCoordinator?
     private var viewModel: FollowerListViewModel
-
+    
     init(viewModel: FollowerListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -34,24 +34,12 @@ class FollowerListVC: GFDataLoadingVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBindings()
+        
         configureViewController()
         configureCollectionView()
         configureSearchController()
         configureDataSource()
-        
-        cancellables = [
-            viewModel.$followers
-                .combineLatest(viewModel.$filterFollowers)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveValue: { [weak self] followers, filterFollowers in
-                    guard let self = self else { return }
-                    if self.viewModel.isSearching {
-                        updateData(on: filterFollowers)
-                    } else {
-                        updateUI(with: followers)
-                    }
-                }),
-        ]
         
         getFollowers()
     }
@@ -74,6 +62,22 @@ class FollowerListVC: GFDataLoadingVC {
         } else {
             contentUnavailableConfiguration = nil
         }
+    }
+    
+    private func setupBindings() {
+        cancellables = [
+            viewModel.$followers
+                .combineLatest(viewModel.$filterFollowers)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { [weak self] followers, filterFollowers in
+                    guard let self = self else { return }
+                    if self.viewModel.isSearching {
+                        updateData(on: filterFollowers)
+                    } else {
+                        updateUI(with: followers)
+                    }
+                }),
+        ]
     }
     
     private func configureViewController() {
