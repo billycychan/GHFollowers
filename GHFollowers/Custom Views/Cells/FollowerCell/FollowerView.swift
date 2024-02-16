@@ -19,6 +19,8 @@ struct FollowerView: View {
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
                 Image(.avatarPlaceholder)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             .clipShape(Circle())
             
