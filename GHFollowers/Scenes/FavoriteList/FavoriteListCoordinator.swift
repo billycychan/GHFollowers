@@ -29,10 +29,8 @@ class FavoriteListCoordinator: Coordinator {
     
     func routeToFollowerListVC(username: String) {
         let followerListCoordinator = FollowerListCoordinator(username: username, navigationController: rootViewController)
+        followerListCoordinator.start()
         followerListCoordinator.parentCoordinator = self
-        children.append(followerListCoordinator)
-        
-        let followerListVC = followerListCoordinator.viewController
-        rootViewController.pushViewController(followerListVC, animated: true)
+        children = [followerListCoordinator]
     }
 }

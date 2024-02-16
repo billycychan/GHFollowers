@@ -14,16 +14,16 @@ class SearchCoordinator: Coordinator {
     
     var rootViewController = UINavigationController()
     
-    lazy var viewController: UIViewController = {
+    lazy var viewController: SearchVC = {
         let viewModel = SearchViewModel()
         let searchVC = SearchVC(viewModel: viewModel)
-        searchVC.coordinator = self
         searchVC.title = "Search"
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         return searchVC
     }()
     
     func start() {
+        viewController.coordinator = self
         rootViewController.setViewControllers([viewController], animated: false)
     }
 }
@@ -31,10 +31,8 @@ class SearchCoordinator: Coordinator {
 extension SearchCoordinator {
     func routeToFollowerListVC(username: String) {
         let followerListCoordinator = FollowerListCoordinator(username: username, navigationController: rootViewController)
+        followerListCoordinator.start()
         followerListCoordinator.parentCoordinator = self
-        children.append(followerListCoordinator)
-        
-        let followerListVC = followerListCoordinator.viewController
-        rootViewController.pushViewController(followerListVC, animated: true)
+        children = [followerListCoordinator]
     }
 }

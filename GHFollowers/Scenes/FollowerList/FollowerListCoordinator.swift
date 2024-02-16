@@ -21,23 +21,29 @@ class FollowerListCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    lazy var viewController: UIViewController = {
+    lazy var viewController: FollowerListVC = {
         let viewModel = FollowerListViewModel(username: username)
         let followerListVC = FollowerListVC(viewModel: viewModel)
         followerListVC.title = username
-        followerListVC.coordinator = self
         return followerListVC
     }()
     
     func start() {
+        viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
     
     func routeToUserInfoVC(username: String) {
-        let destVC = UserInfoVC()
-        destVC.username = username
-        destVC.delegate = viewController as? UserInfoVCDelegate
-        let navController = UINavigationController(rootViewController: destVC)
+        let userInfoCoordinator = UserInfoCoordinator()
+        userInfoCoordinator.start()
+        userInfoCoordinator.parentCoordinator = self
+        children = [userInfoCoordinator]
+        
+        userInfoCoordinator.viewController.username = username
+        userInfoCoordinator.viewController.delegate = viewController
+        
+        let navController = UINavigationController()
+        navController.setViewControllers([userInfoCoordinator.viewController], animated: true)
         viewController.present(navController, animated: true)
     }
 }

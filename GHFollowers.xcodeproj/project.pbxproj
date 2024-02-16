@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4723DD582B7F4DF100E8A6F9 /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4723DD572B7F4DF100E8A6F9 /* UserInfoCoordinator.swift */; };
+		4723DD5A2B7F4DFF00E8A6F9 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4723DD592B7F4DFF00E8A6F9 /* UserInfoViewModel.swift */; };
 		4739CEAB2B7CCC0C00F5E644 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEAA2B7CCC0C00F5E644 /* Coordinator.swift */; };
 		4739CEAD2B7CCC2900F5E644 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEAC2B7CCC2900F5E644 /* AppCoordinator.swift */; };
 		4739CEB12B7CCF3E00F5E644 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4739CEB02B7CCF3E00F5E644 /* SearchViewModel.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4723DD572B7F4DF100E8A6F9 /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		4723DD592B7F4DFF00E8A6F9 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		4739CEAA2B7CCC0C00F5E644 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4739CEAC2B7CCC2900F5E644 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4739CEB02B7CCF3E00F5E644 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4723DD562B7F4D7500E8A6F9 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4723DD572B7F4DF100E8A6F9 /* UserInfoCoordinator.swift */,
+				478B5ABF2B69919F00AFDF61 /* UserInfoVC.swift */,
+				4723DD592B7F4DFF00E8A6F9 /* UserInfoViewModel.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
 		4739CEA92B7CCC0400F5E644 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +223,7 @@
 				4739CEAF2B7CCF2400F5E644 /* Search */,
 				4739CEB82B7D752A00F5E644 /* FollowerList */,
 				4739CEBE2B7D7AAA00F5E644 /* FavoriteList */,
-				478B5ABF2B69919F00AFDF61 /* UserInfoVC.swift */,
+				4723DD562B7F4D7500E8A6F9 /* UserInfo */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -448,6 +462,7 @@
 				479B57632B7DDCF700821A67 /* FollowerListViewModel.swift in Sources */,
 				478B5A712B5F7D4E00AFDF61 /* GFAlertVC.swift in Sources */,
 				478B5AB22B6200AA00AFDF61 /* FollowerCell.swift in Sources */,
+				4723DD582B7F4DF100E8A6F9 /* UserInfoCoordinator.swift in Sources */,
 				4739CEAD2B7CCC2900F5E644 /* AppCoordinator.swift in Sources */,
 				479B57652B7E0B4500821A67 /* FavoriteListViewModel.swift in Sources */,
 				478B5ACE2B6B62C100AFDF61 /* GFFollowerItemVC.swift in Sources */,
@@ -471,6 +486,7 @@
 				4739CEB72B7D6FB300F5E644 /* SearchCoordinator.swift in Sources */,
 				474CC1D52B5C80DA004DFB92 /* SearchVC.swift in Sources */,
 				478B5ACC2B6B615800AFDF61 /* GFReportItemVC.swift in Sources */,
+				4723DD5A2B7F4DFF00E8A6F9 /* UserInfoViewModel.swift in Sources */,
 				4739CEC02B7D7ADA00F5E644 /* FavoriteListCoordinator.swift in Sources */,
 				474CC1C12B5C7CDA004DFB92 /* AppDelegate.swift in Sources */,
 				47F4923F2B7B5E1400E14FD9 /* UIView+Ext.swift in Sources */,

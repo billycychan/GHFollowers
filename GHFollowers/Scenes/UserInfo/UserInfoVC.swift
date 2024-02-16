@@ -7,12 +7,15 @@
 
 import UIKit
 import SafariServices
+import Combine
 
 protocol UserInfoVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
 class UserInfoVC: GFDataLoadingVC {
+    private var cancellables = Set<AnyCancellable>()
+    
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -24,19 +27,41 @@ class UserInfoVC: GFDataLoadingVC {
     
     var username: String!
     
+    weak var coordinator: UserInfoCoordinator?
     weak var delegate: UserInfoVCDelegate?
+    private let viewModel: UserInfoViewModel
+    
+    init(viewModel: UserInfoViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureScrollView()
         layoutUI()
+        
+        cancellables = [
+            viewModel.$user
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { [weak self] user in
+                    guard let self, let user else { return }
+                    self.configureUIElements(with: user)
+                })
+        ]
+        
         getUserInfo()
+
     }
     
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
         navigationItem.rightBarButtonItem = doneButton
     }
     
@@ -57,10 +82,7 @@ class UserInfoVC: GFDataLoadingVC {
     func getUserInfo() {
         Task {
             do {
-                let user = try await NetworkManager.shared.getUserInfo(for: username)
-                DispatchQueue.main.async {
-                    self.configureUIElements(with: user)
-                }
+                try await viewModel.getUserInfo(for: username)
             } catch {
                 if let gfError = error as? GFError {
                     presentGFAlert(title: "Something Went Wrong", message: gfError.rawValue, buttonTitle: "Ok")
@@ -113,8 +135,8 @@ class UserInfoVC: GFDataLoadingVC {
         childVC.didMove(toParent: self)
     }
     
-    @objc func dismissVC() {
-        dismiss(animated: true)
+    @objc func didTapDoneButton() {
+        coordinator?.dismiss()
     }
 }
 
@@ -145,6 +167,6 @@ extension UserInfoVC: GFFollowerItemVCDelegate {
         }
         
         delegate?.didRequestFollowers(for: user.login)
-        dismissVC()
+        coordinator?.dismiss()
     }
 }
