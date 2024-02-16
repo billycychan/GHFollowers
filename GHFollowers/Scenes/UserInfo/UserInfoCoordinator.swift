@@ -11,14 +11,24 @@ class UserInfoCoordinator: Coordinator {
     weak var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     
+    var rootViewController: UIViewController
+
     lazy var viewController: UserInfoVC = {
         let viewModel = UserInfoViewModel()
         let userInfoVC = UserInfoVC(viewModel: viewModel)
         return userInfoVC
     }()
     
+    init(rootViewController: UIViewController) {
+        self.rootViewController = rootViewController
+    }
+    
     func start() {
         viewController.coordinator = self
+        
+        let navController = UINavigationController()
+        navController.setViewControllers([viewController], animated: false)
+        rootViewController.present(navController, animated: true)
     }
     
     func dismiss() {

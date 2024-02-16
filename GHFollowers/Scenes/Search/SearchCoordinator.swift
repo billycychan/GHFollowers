@@ -31,8 +31,8 @@ class SearchCoordinator: Coordinator {
 extension SearchCoordinator {
     func routeToFollowerListVC(username: String) {
         let followerListCoordinator = FollowerListCoordinator(username: username, navigationController: rootViewController)
-        followerListCoordinator.start()
         followerListCoordinator.parentCoordinator = self
         children = [followerListCoordinator]
+        followerListCoordinator.start()
     }
 }

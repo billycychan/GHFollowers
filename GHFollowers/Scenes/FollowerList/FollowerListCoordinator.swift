@@ -34,16 +34,13 @@ class FollowerListCoordinator: Coordinator {
     }
     
     func routeToUserInfoVC(username: String) {
-        let userInfoCoordinator = UserInfoCoordinator()
-        userInfoCoordinator.start()
+        let userInfoCoordinator = UserInfoCoordinator(rootViewController: viewController)
         userInfoCoordinator.parentCoordinator = self
         children = [userInfoCoordinator]
         
         userInfoCoordinator.viewController.username = username
         userInfoCoordinator.viewController.delegate = viewController
         
-        let navController = UINavigationController()
-        navController.setViewControllers([userInfoCoordinator.viewController], animated: true)
-        viewController.present(navController, animated: true)
+        userInfoCoordinator.start()
     }
 }

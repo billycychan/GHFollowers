@@ -12,9 +12,7 @@ class AppCoordinator: Coordinator {
     
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
-    
-    var rootViewController = UITabBarController()
-    
+        
     init(window: UIWindow?) {
         self.window = window
     }
