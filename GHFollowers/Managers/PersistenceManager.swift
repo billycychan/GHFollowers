@@ -11,16 +11,16 @@ enum PersistenceActionType {
     case add, remove
 }
 
-enum PersistenceManager  {
+enum PersistenceManager {
     static private let defaults = UserDefaults.standard
-    
+
     enum Keys {
         static let favorites = "favorites"
     }
-    
+
     static func updateWith(favorite: Follower, actionType: PersistenceActionType) async throws {
         var favorites = try await retrieveFavorites()
-        
+
         switch actionType {
         case .add:
             guard !favorites.contains(favorite) else {
@@ -30,15 +30,15 @@ enum PersistenceManager  {
         case .remove:
             favorites.removeAll(where: { $0.login == favorite.login })
         }
-        
+
         try save(favorites: favorites)
     }
-    
+
     static func retrieveFavorites() async throws -> [Follower] {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             return []
         }
-        
+
         do {
             let decoder = JSONDecoder()
             let favorites = try decoder.decode([Follower].self, from: favoritesData)
@@ -48,7 +48,6 @@ enum PersistenceManager  {
         }
     }
 
-    
     static func save(favorites: [Follower]) throws {
         do {
             let encoder = JSONEncoder()

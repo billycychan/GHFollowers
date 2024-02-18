@@ -9,14 +9,14 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     let window: UIWindow?
-    
+
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
-        
+
     init(window: UIWindow?) {
         self.window = window
     }
-    
+
     func start() {
         let mainCoordinator = MainCoordinator()
         mainCoordinator.start()
@@ -24,4 +24,3 @@ class AppCoordinator: Coordinator {
         window?.rootViewController = mainCoordinator.rootViewController
     }
 }
-

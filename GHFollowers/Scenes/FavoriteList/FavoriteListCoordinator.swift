@@ -9,11 +9,11 @@ import UIKit
 
 class FavoriteListCoordinator: Coordinator {
     weak var parentCoordinator: Coordinator?
-    
+
     var children: [Coordinator] = []
-    
+
     var rootViewController = UINavigationController()
-    
+
     lazy var viewController: FavoritesListVC = {
         let viewModel = FavoriteListViewModel()
         let favoriteListVC = FavoritesListVC(viewModel: viewModel)
@@ -22,14 +22,15 @@ class FavoriteListCoordinator: Coordinator {
         favoriteListVC.coordinator = self
         return favoriteListVC
     }()
-    
+
     func start() {
         viewController.coordinator = self
         rootViewController.setViewControllers([viewController], animated: false)
     }
-    
+
     func routeToFollowerListVC(username: String) {
-        let followerListCoordinator = FollowerListCoordinator(username: username, navigationController: rootViewController)
+        let followerListCoordinator = FollowerListCoordinator(username: username,
+                                                              navigationController: rootViewController)
         followerListCoordinator.parentCoordinator = self
         children = [followerListCoordinator]
         followerListCoordinator.start()

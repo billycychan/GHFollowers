@@ -9,6 +9,6 @@ import Foundation
 
 class SearchViewModel {
     @Published var username = ""
-    
+
     init() {}
 }

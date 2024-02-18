@@ -9,16 +9,16 @@ import Foundation
 
 class FavoriteListViewModel {
    @Published var favorites: [Follower] = []
-    
+
     init() {}
-    
+
     func retrieveFavorites() async throws {
         Task {
             let favroites = try await PersistenceManager.retrieveFavorites()
             self.favorites = favroites
         }
     }
-    
+
     func remove(favorite: Follower) async throws {
         try await PersistenceManager.updateWith(favorite: favorite, actionType: .remove)
     }

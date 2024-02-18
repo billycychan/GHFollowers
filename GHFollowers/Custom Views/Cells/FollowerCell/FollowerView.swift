@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FollowerView: View {
-    
+
     var follower: Follower
-    
+
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: follower.avatarUrl)) { image in
@@ -23,7 +23,7 @@ struct FollowerView: View {
                     .aspectRatio(contentMode: .fit)
             }
             .clipShape(Circle())
-            
+
             Text(follower.login)
                 .bold()
                 .lineLimit(1)

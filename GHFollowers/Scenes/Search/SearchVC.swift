@@ -10,20 +10,20 @@ import Combine
 
 class SearchVC: UIViewController {
     private var cancellables = Set<AnyCancellable>()
-    
+
     lazy private var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Images.ghLogo
         return imageView
     }()
-    
+
     lazy private var usernameTextField: GFTextField = {
         let textField = GFTextField()
         textField.delegate = self
         textField.spellCheckingType = .no
         return textField
     }()
-    
+
     lazy private var callToActionButton: GFButton = {
         let button = GFButton(
             color: .systemGreen,
@@ -33,43 +33,42 @@ class SearchVC: UIViewController {
         button.addTarget(self, action: #selector(didTapCallToActionButton), for: .touchUpInside)
         return button
     }()
-    
+
     weak var coordinator: SearchCoordinator?
     private var viewModel: SearchViewModel
-    
+
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubviews(logoImageView, usernameTextField, callToActionButton)
-        
+
         setupBindings()
-        
+
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
-        
-        
+
         NSLayoutConstraint.activate([
             view.keyboardLayoutGuide.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor)
         ])
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.username = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+
     private func setupBindings() {
         cancellables = [
             usernameTextField.textPublisher.sink { [weak self] text in
@@ -78,12 +77,12 @@ class SearchVC: UIViewController {
             viewModel.$username.sink { [weak self] username in self?.usernameTextField.text = username }
         ]
     }
-    
+
     private func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc private func didTapCallToActionButton() {
         guard !viewModel.username.isEmpty else {
             presentGFAlert(
@@ -93,14 +92,14 @@ class SearchVC: UIViewController {
             )
             return
         }
-        
+
         usernameTextField.resignFirstResponder()
         coordinator?.routeToFollowerListVC(username: viewModel.username)
     }
-    
+
     private func configureLogoImageView() {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -108,7 +107,7 @@ class SearchVC: UIViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
-    
+
     private func configureTextField() {
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
@@ -117,7 +116,7 @@ class SearchVC: UIViewController {
             usernameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+
     private func configureCallToActionButton() {
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -126,7 +125,7 @@ class SearchVC: UIViewController {
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+
 }
 
 extension SearchVC: UITextFieldDelegate {
