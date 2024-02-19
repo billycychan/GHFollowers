@@ -10,9 +10,15 @@ import Foundation
 class FollowerListViewModel {
     @Published var followers: [Follower] = []
     @Published var filterFollowers: [Follower] = []
-    @Published var isSearching = false
-
-    var hasMoreFollower = true
+    
+    var activeArray: [Follower] {
+        isSearching ? filterFollowers : followers
+    }
+    
+    var isSearching = false
+    var hasMoreFollower: Bool {
+        followers.count >= 100
+    }
     var isLoadingMoreFollowers = false
 
     var username: String
@@ -29,12 +35,11 @@ class FollowerListViewModel {
     }
 
     func searchFollowers(with filter: String) {
-        guard !filter.isEmpty else {
+        guard isSearching else {
             filterFollowers.removeAll()
             isSearching = false
             return
         }
-        isSearching = true
         filterFollowers = followers.filter {$0.login.lowercased().contains(filter.lowercased())}
     }
 

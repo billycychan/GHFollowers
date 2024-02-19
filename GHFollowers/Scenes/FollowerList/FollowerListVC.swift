@@ -149,14 +149,12 @@ class FollowerListVC: GFDataLoadingVC {
     }
 
     private func updateUI(with followers: [Follower]) {
-        self.viewModel.hasMoreFollower = followers.count >= 100
-
-        if self.viewModel.followers.isEmpty {
+        if followers.isEmpty {
             setNeedsUpdateContentUnavailableConfiguration()
             return
         }
 
-        self.updateData(on: self.viewModel.followers)
+        self.updateData(on: followers)
     }
 
     private func configureDataSource() {
@@ -198,7 +196,7 @@ extension FollowerListVC: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let activeArray = viewModel.isSearching ? viewModel.filterFollowers : viewModel.followers
+        let activeArray = viewModel.activeArray
         let follower = activeArray[indexPath.item]
         coordinator?.routeToUserInfoVC(username: follower.login)
     }
@@ -206,7 +204,10 @@ extension FollowerListVC: UICollectionViewDelegate {
 
 extension FollowerListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        viewModel.searchFollowers(with: searchController.searchBar.text ?? "")
+        let filterText = searchController.searchBar.text ?? ""
+        viewModel.isSearching = !filterText.isEmpty
+        viewModel.searchFollowers(with: filterText)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
