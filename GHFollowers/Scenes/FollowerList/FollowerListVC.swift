@@ -149,9 +149,8 @@ class FollowerListVC: GFDataLoadingVC {
     }
 
     private func updateUI(with followers: [Follower]) {
-        if followers.isEmpty {
+        if viewModel.followers.isEmpty {
             setNeedsUpdateContentUnavailableConfiguration()
-            return
         }
 
         self.updateData(on: followers)

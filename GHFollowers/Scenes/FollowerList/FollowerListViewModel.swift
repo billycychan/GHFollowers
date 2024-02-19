@@ -10,11 +10,11 @@ import Foundation
 class FollowerListViewModel {
     @Published var followers: [Follower] = []
     @Published var filterFollowers: [Follower] = []
-    
+
     var activeArray: [Follower] {
         isSearching ? filterFollowers : followers
     }
-    
+
     var isSearching = false
     var hasMoreFollower: Bool {
         followers.count >= 100

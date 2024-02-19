@@ -11,6 +11,9 @@ import SwiftUI
 class FollowerCell: UICollectionViewCell {
     static let reuseID = "FollowerCell"
 
+    convenience init(image: UIImage) {
+        self.init(frame: .zero)
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -20,6 +23,8 @@ class FollowerCell: UICollectionViewCell {
     }
 
     func set(follower: Follower) {
-        contentConfiguration = UIHostingConfiguration { FollowerView(follower: follower) }
+        contentConfiguration = UIHostingConfiguration { FollowerView(avatarUrl: follower.avatarUrl,
+                                                                     username: follower.login)
+        }
     }
 }
