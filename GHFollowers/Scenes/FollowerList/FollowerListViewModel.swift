@@ -30,7 +30,7 @@ class FollowerListViewModel {
     }
 
     func getFollowers() async throws {
-        let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
+        let followers = try await NetworkManager.shared.request(session: .shared, .user(.getfollowers(username: username, page: page)), type: [Follower].self)
         self.followers.append(contentsOf: followers)
     }
 

@@ -19,31 +19,11 @@ final class NetworkManager {
         decoder.dateDecodingStrategy = .iso8601
     }
 
-    func getFollowers(for username: String, page: Int) async throws -> [Follower] {
-        let endpoint = baseURL + "/users/\(username)/followers?per_page=100&page=\(page)"
-
-        guard let url = URL(string: endpoint) else {
-            throw GFError.invalidUsername
-        }
-
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw GFError.invalidResponse
-        }
-
-        do {
-            return try decoder.decode([Follower].self, from: data)
-        } catch {
-            throw GFError.invalidData
-        }
-    }
-
     func getUserInfo(for username: String) async throws -> User {
         let endpoint = baseURL + "/users/" + "\(username)"
 
         guard let url = URL(string: endpoint) else {
-            throw GFError.invalidUsername
+            throw GFError.invalidData
         }
 
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -80,5 +60,41 @@ final class NetworkManager {
         } catch {
             return nil
         }
+    }
+}
+
+extension NetworkManager {
+    func request<T: Codable>(session: URLSession,
+                             _ endpoint: Endpoint,
+                             type: T.Type) async throws -> T {
+        guard let url = endpoint.url else {
+            throw GFError.invalidURL
+        }
+        
+        let request = buildRequest(from: url, methodType: endpoint.methodType)
+        
+        let (data, response) = try await session.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse,
+                (200...300) ~= response.statusCode else {
+            throw GFError.invalidResponse
+        }
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw GFError.invalidData
+        }
+    }
+}
+
+private extension NetworkManager {
+    func buildRequest(from url: URL, methodType: Endpoint.MethodType) -> URLRequest {
+        var request = URLRequest(url: url)
+        
+        switch methodType {
+        case .GET:
+            request.httpMethod = "GET"
+        }
+        return request
     }
 }
