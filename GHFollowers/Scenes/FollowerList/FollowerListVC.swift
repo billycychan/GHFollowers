@@ -212,12 +212,10 @@ extension FollowerListVC: UISearchResultsUpdating {
 
 extension FollowerListVC: UserInfoVCDelegate {
     func didRequestFollowers(for username: String) {
-        self.viewModel.username = username
+        viewModel.reset()
+        viewModel.username = username
         title = username
-        viewModel.page = 1
-
-        viewModel.followers.removeAll()
-        viewModel.filterFollowers.removeAll()
+        navigationItem.searchController?.isActive = false
         collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         getFollowers()
     }

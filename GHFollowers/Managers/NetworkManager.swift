@@ -50,11 +50,11 @@ extension NetworkManager {
         guard let url = endpoint.url else {
             throw GFError.invalidURL
         }
-        
+
         let request = buildRequest(from: url, methodType: endpoint.methodType)
-        
+
         let (data, response) = try await session.data(for: request)
-        
+
         guard let response = response as? HTTPURLResponse,
                 (200...300) ~= response.statusCode else {
             throw GFError.invalidResponse
@@ -70,7 +70,7 @@ extension NetworkManager {
 private extension NetworkManager {
     func buildRequest(from url: URL, methodType: Endpoint.MethodType) -> URLRequest {
         var request = URLRequest(url: url)
-        
+
         switch methodType {
         case .GET:
             request.httpMethod = "GET"

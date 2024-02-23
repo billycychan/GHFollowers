@@ -48,4 +48,11 @@ class FollowerListViewModel {
         let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
         try await PersistenceManager.updateWith(favorite: favorite, actionType: .add)
     }
+
+    func reset() {
+        page = 1
+        followers.removeAll()
+        filterFollowers.removeAll()
+        isSearching = false
+    }
 }
