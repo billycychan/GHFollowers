@@ -12,6 +12,7 @@ enum Endpoint {
     
     enum User {
         case getfollowers(username: String, page: Int)
+        case getUserInfo(username: String)
     }
     
     enum MethodType {
@@ -27,12 +28,14 @@ extension Endpoint {
         switch self {
         case let .user(.getfollowers(username, _)):
             return "/users/\(username)/followers"
+        case let .user(.getUserInfo(username)):
+            return "/users/\(username)"
         }
     }
     
     var methodType: MethodType {
         switch self {
-        case .user(.getfollowers):
+        case .user(.getfollowers), .user(.getUserInfo):
             return .GET
         }
     }
@@ -42,6 +45,8 @@ extension Endpoint {
         case let .user(.getfollowers(_, page)):
             return ["per_page": "100",
                     "page": String(page)]
+        case .user(.getUserInfo):
+            return nil
         }
     }
 }

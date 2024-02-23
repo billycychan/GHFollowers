@@ -19,26 +19,6 @@ final class NetworkManager {
         decoder.dateDecodingStrategy = .iso8601
     }
 
-    func getUserInfo(for username: String) async throws -> User {
-        let endpoint = baseURL + "/users/" + "\(username)"
-
-        guard let url = URL(string: endpoint) else {
-            throw GFError.invalidData
-        }
-
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw GFError.invalidResponse
-        }
-
-        do {
-            return try decoder.decode(User.self, from: data)
-        } catch {
-            throw GFError.invalidData
-        }
-    }
-
     func downloadImage(from urlString: String) async -> UIImage? {
         let cacheKey = NSString(string: urlString)
 

@@ -12,7 +12,7 @@ class UserInfoViewModel {
     @Published var user: User?
 
     func getUserInfo(for username: String) async throws {
-        let user = try await NetworkManager.shared.getUserInfo(for: username)
+        let user = try await NetworkManager.shared.request(session: .shared, .user(.getUserInfo(username: username)), type: User.self)
         self.user = user
     }
 }

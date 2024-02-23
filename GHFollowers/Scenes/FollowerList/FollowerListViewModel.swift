@@ -44,7 +44,7 @@ class FollowerListViewModel {
     }
 
     func addUserFavorites() async throws {
-        let user = try await NetworkManager.shared.getUserInfo(for: username)
+        let user = try await NetworkManager.shared.request(session: .shared, .user(.getUserInfo(username: username)), type: User.self)
         let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
         try await PersistenceManager.updateWith(favorite: favorite, actionType: .add)
     }
